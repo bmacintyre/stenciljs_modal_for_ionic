@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>PWA Toolkit</title>
+
+  <meta name="viewport" content="viewport-fit=cover, width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta name="description" content="Welcome to the Ionic PWA Toolkit. You can use this starter to build fast PWAs using Ionic and Stencil!">
+  <meta name="theme-color" content="#16161d">
+
+  <meta name="format-detection" content="telephone=no">
+  <meta name="msapplication-tap-highlight" content="no">
+
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="Ionic PWA">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+  <meta http-equiv="x-ua-compatible" content="IE=Edge">
+
+  <link href="/build/app.css" rel="stylesheet">
+  <script src="/build/app.js"></script>
+
+  <link rel="apple-touch-icon" href="/assets/icon/icon.png">
+  <link rel="icon" type="image/x-icon" href="/assets/icon/favicon.ico">
+  <link rel="manifest" href="/manifest.json">
+</head>
+
+<body>
+
+
+
+  <app-root></app-root>
+
+  <app-backdrop></app-backdrop>
+  <app-modal title="Web Component Example" content="This is modal was created using a Web Component built with StencilJS. Buttons, URLs & Text are supplied as arguments."></app-modal>
+
+  <script>
+
+ 
+
+    var app = document.querySelector('app-root');
+    var backdrop = document.querySelector('app-backdrop');
+    var modal = document.querySelector('app-modal');
+
+    buttons = [{title: 'Web Components', url: 'https://www.webcomponents.org/'}, {title: 'Stencil', url: 'https://stenciljs.com/'}, {title: 'Close', url: 'CLOSE_MODAL'}];
+    modal.buttons = buttons;
+
+    setTimeout(() => {
+      var btn = document.querySelector('ion-button');
+   
+      btn.addEventListener('click', function() {
+        backdrop.open();
+        modal.open();
+      });
+    }, 1000);
+
+  </script>
+</body>
+
+</html>
